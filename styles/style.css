@@ -1,0 +1,834 @@
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+@font-face {
+  font-family: "Prata";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Prata-Regular"),
+    url("../fonts/Prata-Regular.woff2") format("woff2"),
+    url("../fonts/Prata-Regular.woff") format("woff");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Raleway-Regular"),
+    url("../fonts/Raleway-Regular.woff2") format("woff2"),
+    url("../fonts/Raleway-Regular.woff") format("woff");
+  font-display: swap;
+}
+
+:root {
+  --black: #000000;
+  --white: #ffffff;
+  --god-gray: #181515;
+  --tabasco: #ad2d11;
+  --bright-sun: #faca47;
+  --linen: #fdfaf4;
+}
+
+body {
+  margin: 0 auto;
+  font-family: "Open Sans", sans-serif;
+  background-color: var(--white);
+}
+
+.main {
+  position: relative;
+  margin: 0 auto;
+}
+
+.container:before,
+.container:after {
+  content: none;
+}
+
+.link-reset {
+  color: inherit;
+  text-decoration: none;
+}
+
+.btn-reset {
+  padding: 0;
+  background-color: transparent;
+  border: none;
+}
+
+.list-reset {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.flex {
+  display: flex;
+}
+
+.container {
+  width: 100%;
+  max-width: 1176px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+h1 {
+  margin: 0;
+  font-size: 48px;
+  font-family: "Prata";
+  color: var(--tabasco);
+}
+
+h2 {
+  margin: 0;
+  font-size: 32px;
+  font-family: "Prata";
+  font-weight: 400;
+  color: var(--tabasco);
+}
+
+p {
+  margin: 0;
+  font-size: 18px;
+  font-family: "Raleway";
+  color: var(--black);
+}
+
+a {
+  text-decoration: none;
+}
+
+/*header*/
+.header {
+  /*background-image: url("../img/main.webp");*/
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.header-nav {
+  padding-top: 32px;
+  padding-bottom: 25px;
+  border-bottom: 1px solid var(--black);
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-family: "Raleway";
+  color: var(--black);
+}
+
+.header-list__item:not(:last-child) {
+  margin-right: 64px;
+}
+
+.header-list__link {
+  text-decoration: none;
+  outline: none;
+  color: var(--black);
+  transition: color 0.3s ease-in-out;
+}
+
+.header-list__link:hover {
+  color: var(--tabasco);
+}
+
+.header-list__link:focus,
+.header-list__link:active {
+  color: var(--bright-sun);
+}
+
+/*hero*/
+.hero {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 732px;
+  text-align: center;
+  background-image: url("../img/main.webp");
+  background-size: cover;
+  background-position-y: 1px;
+  background-repeat: no-repeat;
+  z-index: -2;
+}
+
+.hero__title {
+  margin: 0;
+  padding-top: 297px;
+  margin-bottom: 8px;
+}
+
+.hero__descr {
+  margin: 0;
+  font-size: 24px;
+  letter-spacing: 0.2px;
+  animation-delay: 0.4s;
+}
+
+/*about*/
+.about {
+  padding-top: 201px;
+  padding-bottom: 123px;
+  margin-top: 655px;
+  background-color: var(--linen);
+}
+
+.about__title {
+  margin-bottom: 56px;
+}
+
+.about__swiper {
+  height: 476px;
+}
+
+.swiper-horizontal > .swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal,
+.swiper-pagination-custom,
+.swiper-pagination-fraction {
+  left: -300px;
+}
+
+.swiper-pagination-bullet {
+  width: 32px;
+  height: 2px;
+  margin-left: 10px;
+  background-color: var(--white);
+  opacity: 1;
+}
+
+.swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
+.swiper-pagination-horizontal.swiper-pagination-bullets
+  .swiper-pagination-bullet {
+  margin: 17px;
+  margin-left: 8px;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: var(--bright-sun);
+}
+
+.about__one {
+  background-image: url("../img/peterhof.webp");
+  background-repeat: no-repeat;
+  background-size: 771px;
+}
+
+.about__two {
+  background-image: url("../img/petr.webp");
+  background-repeat: no-repeat;
+  background-size: 771px;
+}
+
+.about__three {
+  background-image: url("../img/liner.webp");
+  background-repeat: no-repeat;
+  background-size: 771px;
+}
+
+.about__descr {
+  width: 23%;
+  position: absolute;
+  right: 156px;
+  line-height: 26px;
+  letter-spacing: 0.1px;
+}
+
+.about__prev {
+  top: 70%;
+  left: 67%;
+  right: 5px;
+  transform: rotate(180deg);
+  fill:var(--tabasco);
+  height: 75px;
+  width: 75px;
+  padding: 18px 16px;
+  border-radius: 50%;
+  border: 1px solid var(--tabasco);
+  transform: translate(-19px, -12px);
+  transition: fill 0.3s ease-in-out, border 0.3s ease-in-out;
+}
+
+.about__next {
+  top: 65%;
+  left: 74.5%;
+  margin-top: 0;
+  right: 45px;
+  fill:var(--tabasco);
+  height: 75px;
+  padding: 18px 12px;
+  transform: translate(-21px, -10px);
+  width: 75px;
+  border-radius: 50%;
+  border: 1px solid var(--tabasco);
+  transition: fill 0.3s ease-in-out, border 0.3s ease-in-out;
+}
+
+
+.about__next::after{
+  content: '';
+}
+
+.about__prev::after {
+  content: ''; 
+}
+
+
+.about__next:hover,
+.about__prev:hover{
+  fill:var(--bright-sun);
+  border: 1px solid var(--bright-sun);
+}
+
+.about__next:focus,
+.about__prev:focus,
+.about__next:active,
+.about__prev:active{
+  fill:var(--black);
+  border: 1px solid var(--black);
+}
+
+
+/*block*/
+.block {
+  background-image: url("../img/bg-block1.webp");
+  background-position: left 171px bottom 2px;
+  background-repeat: no-repeat;
+}
+
+.block__title {
+  padding: 159px 0 192px;
+  font-size: 32px;
+  font-family: "Prata";
+  line-height: 54px;
+  letter-spacing: 0.1px;
+  background-image: url("../img/bg-block2.webp");
+  background-repeat: no-repeat;
+  background-position: right 70px top 18px;
+}
+
+/*history*/
+.history {
+  padding-top: 120px;
+  padding-bottom: 140px;
+  background-color: var(--linen);
+}
+
+.history__title {
+  margin-top: 4px;
+  margin-bottom: 90px;
+}
+
+.history-dates__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+li.history-dates__item {
+  margin-bottom: 50px;
+}
+
+.history-dates {
+  margin: 0 auto;
+  max-width: 976px;
+}
+
+.history-dates__list {
+  max-width: 976px;
+}
+
+.history-dates__list .history-dates__item .title {
+  max-width: 224px;
+  text-align: center;
+  font-size: 16px;
+  font-family: "Raleway";
+  font-weight: 300;
+  line-height: 22px;
+}
+
+.history-dates__item {
+  display: flex;
+  align-items: center;
+}
+
+.first-span,
+.right__span,
+.last-date {
+  background-color: var(--bright-sun);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  transform: translate(-21px, -21px);
+  font-size: 18px;
+  font-family: "Prata";
+  color: var(--white);
+  padding: 10px 15px;
+}
+
+.left__span {
+  background-color: var(--bright-sun);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  transform: translate(36px, -21px);
+  font-size: 18px;
+  font-family: "Prata";
+  color: var(--white);
+  padding: 10px 15px;
+}
+
+.left__span::before {
+  content: "";
+  width: 1px;
+  transform: translate(4px, -80px);
+  height: 163px;
+  background-color: var(--bright-sun);
+  position: absolute;
+  z-index: -1;
+}
+
+.left__span::after {
+  content: "";
+  height: 1px;
+  transform: translate(-308px, -15px);
+  width: 300px;
+  background-color: var(--bright-sun);
+  position: absolute;
+  z-index: -1;
+}
+
+.right__span::before {
+  content: "";
+  width: 1px;
+  transform: translate(3px, -119px);
+  height: 260px;
+  background-color: var(--bright-sun);
+  position: absolute;
+  z-index: -1;
+}
+
+.right__span::after {
+  content: "";
+  height: 1px;
+  transform: translate(24px, -15px);
+  width: 291px;
+  background-color: var(--bright-sun);
+  position: absolute;
+  z-index: -1;
+}
+
+.first-span::after {
+  content: "";
+  height: 1px;
+  transform: translate(0px, 10px);
+  width: 311px;
+  background-color: var(--bright-sun);
+  position: absolute;
+  z-index: -1;
+}
+
+.second-date::before {
+  content: "";
+  height: 289px;
+  transform: translate(3px, -206px);
+  width: 1px;
+  background-color: var(--bright-sun);
+  position: absolute;
+  z-index: -1;
+}
+
+.seven-date::after {
+  content: "";
+  height: 1px;
+  transform: translate(12px, 9px);
+  width: 311px;
+  background-color: var(--bright-sun);
+  position: absolute;
+  z-index: -1;
+}
+
+.last-date::after {
+  content: "";
+  height: 1px;
+  transform: translate(5px, -14px);
+  width: 311px;
+  background-color: var(--bright-sun);
+  position: absolute;
+  z-index: -1;
+}
+
+.history-dates__content.first-content {
+  margin-top: -49px;
+  margin-right: 48px;
+}
+
+.history-dates__content.third-content {
+  margin-top: -20px;
+  margin-right: 61px;
+}
+
+.history-dates__content.fourth-content {
+  margin-top: -23px;
+  margin-left: 59px;
+}
+
+.history-dates__content.fifth-content {
+  margin-top: -21px;
+  margin-right: 38px;
+}
+
+.history-dates__content.fifth-content .title,
+.history-dates__content.second-content .title,
+.history-dates__content.sixth-content .title,
+.history-dates__content.seventh-content .title,
+.history-dates__content.eigth-content .title {
+  max-width: 266px;
+}
+
+.history-dates__content.sixth-content {
+  margin-top: -42px;
+  margin-left: 38px;
+}
+
+.history-dates__content.seventh-content {
+  margin-top: 3px;
+  margin-right: 40px;
+}
+
+.history-dates__content.eigth-content {
+  margin-top: 19px;
+  margin-left: 38px;
+}
+
+.history-dates__content.eigth-content .title {
+  max-width: 266px;
+}
+
+.history-dates__content.ninth-content {
+  margin-top: -29px;
+  margin-right: 59px;
+}
+
+.six-date {
+  transform: translate(15px, -21px);
+}
+
+.first-content img,
+.right img {
+  /*margin-top: -38px;*/
+  transform: translate(-13px, -21px);
+  outline: 1px solid var(--bright-sun);
+  border-radius: 50%;
+  outline-offset: 13px;
+}
+
+.right img:last-child {
+  transform: translate(-13px, -25px);
+}
+
+.history-dates__content.second-content {
+  margin-left: 40px;
+  margin-top: -20px;
+}
+
+.left,
+.right {
+  animation-duration: 2s;
+}
+
+.left {
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.right {
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.left img {
+  /*margin-top: -38px;*/
+  transform: translate(12px, -21px);
+  outline: 1px solid var(--bright-sun);
+  border-radius: 50%;
+  outline-offset: 13px;
+}
+
+.date {
+  margin-bottom: 24px;
+  max-width: 250px;
+  text-align: center;
+  font-size: 18px;
+  font-family: "Prata";
+  /*border-bottom: 1px solid var(--bright-sun);*/
+}
+
+.title {
+  font-size: 16px;
+  font-family: "Raleway";
+  max-width: 266px;
+}
+
+.right {
+  display: flex;
+  justify-content: right;
+}
+
+.fifth-title {
+  max-width: 266px;
+}
+
+.right__span,
+.last-date {
+  transform: translate(-33px, -27px);
+}
+
+span.second-date.left__span {
+  transform: translate(14px, -21px);
+}
+
+span.right__span.third-span {
+  transform: translate(-31px, -22px);
+}
+
+span.right__span.fifth-span {
+  transform: translate(-12px, -22px);
+}
+
+span.seven-date.right__span {
+  transform: translate(-10px, -21px);
+}
+
+span.left__span.eight-date {
+  transform: translate(15px, -21px);
+}
+
+span.left__span.eight-date::before {
+  height: 267px;
+}
+
+/*sights*/
+.sights {
+  padding-top: 94px;
+  padding-bottom: 75px;
+}
+
+.sights__title {
+  margin-top: 27px;
+  margin-bottom: 156px;
+}
+
+.sights-total__descr,
+.budget__descr {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.sights-total__descr p {
+  width: 57.5%;
+  margin-bottom: 180px;
+  line-height: 30px;
+}
+
+.sights__descr {
+  max-width: 476px;
+  margin: 0;
+  font-size: 16px;
+  line-height: 26px;
+}
+
+.sights-ermitazh,
+.sights-square,
+.sights-tower,
+.sights-peterhof,
+.sights-cathedral {
+  display: grid;
+  grid-template-columns: 301px 400px auto;
+  border-top: 1px solid var(--bright-sun);
+  padding-top: 69px;
+  padding-bottom: 106px;
+  align-items: start;
+}
+
+.sights img {
+  transform: translate(-1px, 7px);
+}
+
+.sights h4 {
+  max-width: 189px;
+  margin: 0;
+  font-family: "Prata";
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.sights-square p:not(:last-child) {
+  padding-bottom: 12px;
+}
+
+/*budget*/
+.budget {
+  padding-top: 100px;
+  padding-bottom: 140px;
+  background-color: var(--linen);
+}
+
+.budget__title {
+  margin: 0;
+  margin-top: 24px;
+}
+
+.budget__descr p {
+  width: 57.5%;
+  padding-top: 55px;
+  padding-bottom: 217px;
+  line-height: 30px;
+}
+
+.budget-living,
+.budget-restourant,
+.budget-theatre,
+.budget-souveniers {
+  width: 276px;
+  padding-top: 25px;
+}
+
+.budget-restourant {
+  animation-delay: 0.2s;
+}
+
+.budget-theatre {
+  animation-delay: 0.4s;
+}
+
+.budget-souveniers {
+  animation-delay: 0.6s;
+}
+
+.budget-descr {
+  margin-top: 31px;
+  margin-bottom: 20px;
+}
+
+.budget-points {
+  text-align: center;
+  justify-content: space-between;
+}
+
+.price {
+  text-align: center;
+  font-size: 22px;
+  font-family: "Prata";
+  line-height: 26px;
+}
+
+/*map*/
+.map {
+  background-color: var(--linen);
+  padding-top: 93px;
+}
+
+.map__title {
+  margin-top: 28px;
+  margin-bottom: 57px;
+}
+
+.ymaps-2-1-79-controls__toolbar_left,
+ymaps.ymaps-2-1-79-zoom,
+ymaps.ymaps-2-1-79-traffic,
+.ymaps-2-1-79-controls__toolbar_right,
+ymaps.ymaps-2-1-79-gotoymaps,
+ymaps.ymaps-2-1-79-gototaxi,
+a.ymaps-2-1-79-gototech,
+ymaps.ymaps-2-1-79-copyrights-pane,
+ymaps.ymaps-2-1-79-controls__control {
+  display: none;
+}
+
+ymaps.ymaps-2-1-79-map.ymaps-2-1-79-i-ua_js_yes.ymaps-2-1-79-map-bg.ymaps-2-1-79-islets_map-lang-ru {
+  height: 476px;
+}
+
+.ymaps-2-1-79-map {
+  height: 476px;
+}
+
+#map {
+  height: 476px;
+  width: 100%;
+  margin-right: 58px;
+}
+
+[class*="ground-pane"] {
+  filter: hue-rotate(210deg) grayscale(0.8);
+}
+
+.footer {
+  background-color: var(--god-gray);
+  color: var(--white);
+}
+
+nav.footer-nav {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  font-size: 16px;
+  font-family: "Raleway";
+  padding: 48px 0;
+}
+
+.footer-nav li {
+  padding-bottom: 16px;
+}
+
+.footer-nav__link {
+  color: var(--white);
+  outline: none;
+}
+
+.footer-nav__link:hover {
+  color: var(--bright-sun);
+}
+
+.footer-nav__link:focus,
+.footer-nav__link:active {
+  color: var(--tabasco);
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.footer-copyright__descr,
+.footer-copyright__confidentiality {
+  color: var(--white);
+  font-size: 12px;
+  margin: 0;
+  margin-bottom: 27px;
+}
+
+.footer-copyright__descr {
+  font-family: "Raleway";
+  margin-right: 61px;
+}
+
+.footer-nav__left {
+  margin-left: 11px;
+}
+
+.footer-nav__right {
+  margin-left: 18px;
+}
+
+.footer-copyright.flex {
+  align-items: flex-end;
+  justify-content: flex-start;
+}
